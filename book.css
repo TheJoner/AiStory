@@ -1,0 +1,107 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.book-container {
+    width: 90%;
+    max-width: 1100px;
+    text-align: center;
+}
+
+.book {
+    position: relative;
+    width: 100%;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    background: #fff;
+    overflow: hidden;
+}
+
+.page {
+    display: flex;
+    align-items: stretch;
+    height: 100%;
+    transition: transform 1s;
+    transform: translateX(100%);
+    position: absolute;
+    width: 100%;
+}
+
+.page.active {
+    transform: translateX(0);
+}
+
+.page .text {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    text-align: left;
+    background: #f9f9f9;
+    border-right: 1px solid #ddd;
+}
+
+.page .text h2 {
+    margin: 0 0 10px;
+    color: #444;
+}
+
+.page .text p {
+    margin: 0;
+    line-height: 1.6;
+    color: #666;
+}
+
+.page img {
+    flex: 1;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.controls {
+    margin-top: 20px;
+}
+
+.controls button {
+    padding: 10px 20px;
+    margin: 0 10px;
+    font-size: 16px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.controls button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+.navigation {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.navigation .link {
+    text-decoration: none;
+    font-size: 18px;
+    color: #007BFF;
+    background-color: #f0f0f0;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.navigation .link:hover {
+    background-color: #ddd;
+}
